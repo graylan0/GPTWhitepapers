@@ -1,0 +1,23 @@
+
+import math
+
+def wormhole(x, y, z):
+    '''
+    This function will calculate the coordinates of a wormhole in 3D space.
+    Inputs:
+    x, y, z - the initial coordinates
+    Output:
+    newX, newY, newZ - the coordinates after passing through the wormhole
+    '''
+    # Calculate the distance from the origin
+    r = math.sqrt(x**2 + y**2 + z**2)
+    
+    # Calculate the angle between the vector and the z-axis
+    theta = math.acos(z/r)
+    
+    # Calculate the new coordinates
+    newX = r * math.sin(theta) * math.cos(theta)
+    newY = r * math.sin(theta) * math.sin(theta)
+    newZ = r * math.cos(theta)
+    
+    return newX, newY, newZ
